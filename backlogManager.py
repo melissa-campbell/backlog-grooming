@@ -40,7 +40,6 @@ for item in backlog:
         if dev.assign_developer(item.estimate):
             Assignment(item, dev)
             item.assigned = True
-            print(f'At Capacity: {dev.at_capacity}')
             break 
 
 
