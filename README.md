@@ -6,6 +6,8 @@ Add tasks to backlog.
 Add developers to roster.
 Assign developers to tasks.
 
+* Run backlogManager.py
+
 Features: 
 * Classes - objects populated with data and used within program
 * List - populated with data
