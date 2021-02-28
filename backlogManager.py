@@ -1,21 +1,44 @@
 from developer import Developer
 from task import Task
 from assignment import Assignment
+import csv # testing new stuff
 
 developer_list = [ Developer('Billy', 'Java'), Developer('Chris', '.NET')]
 
 
-def developer_add(name, skill):
+def developer_add_to_list(name, skill):
     name = Developer(name, skill)
     developer_list.append(name)
 
 
-developer_add('Tina', 'COBOL')
-developer_add('Sam', 'Java')
-developer_add('Sheila', '.NET')
-developer_add('Matt', 'COBOL')
-developer_add('Mike', 'Java')
-developer_add('Sally', '.NET')
+def developer_add_to_csv(developer_list):
+    with open('developer.csv', 'w', newline="") as csvfile:
+        fieldnames  = ['name', 'skill', 'rate', 'availability', 'allocation']
+        devwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        devwriter.writeheader()
+        for item in developer_list:
+            devwriter.writerow({"name": item.name, "skill": item.skill, "rate": item.rate, "availability": item.availability, "allocation": item.allocation})
+
+
+def developer_select_from_csv(skill):        
+    with open('developer.csv') as csvfile:
+        devreader = csv.DictReader(csvfile)
+        for row in devreader:
+            # if row['skill'] == 'Java':
+            if row['skill'] == skill:
+                print(row['name'], row['skill'])
+            # print(row)
+
+
+developer_add_to_list('Tina', 'COBOL')
+developer_add_to_list('Sam', 'Java')
+developer_add_to_list('Sheila', '.NET')
+developer_add_to_list('Matt', 'COBOL')
+developer_add_to_list('Mike', 'Java')
+developer_add_to_list('Sally', '.NET')
+
+developer_add_to_csv(developer_list)
+developer_select_from_csv('Java')
 
 backlog = []
 
@@ -58,8 +81,8 @@ backlog[0].update_perent_complete(40)
 print(backlog[0].percent_complete)
 
 
+# FUTURE features
 # estimate in $
-
 # dependencies?
 # split into smaller chunks?
 
