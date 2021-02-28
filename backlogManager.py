@@ -37,9 +37,6 @@ developer_add_to_list('Matt', 'COBOL')
 developer_add_to_list('Mike', 'Java')
 developer_add_to_list('Sally', '.NET')
 
-developer_add_to_csv(developer_list)
-developer_select_from_csv('Java')
-
 backlog = []
 
 
@@ -66,6 +63,8 @@ for item in backlog:
             break 
 
 
+developer_add_to_csv(developer_list)
+developer_select_from_csv('Java')
 
 for dev in developer_list:
     print(f'Name: {dev.name}, Allocation: {dev.allocation}')
