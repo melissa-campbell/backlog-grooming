@@ -1,9 +1,9 @@
 name,skill,rate,availability,allocation
 Billy,Java,60,120,100
-Chris,.NET,60,120,40
+Chris,.NET,60,120,90
 Tina,COBOL,60,120,100
-Sam,Java,60,120,0
-Sheila,.NET,60,120,0
-Matt,COBOL,60,120,0
-Mike,Java,60,120,0
+Sam,Java,60,120,90
+Sheila,.NET,60,120,100
+Matt,COBOL,60,120,100
+Mike,Java,60,120,100
 Sally,.NET,60,120,0

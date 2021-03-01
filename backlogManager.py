@@ -50,6 +50,12 @@ backlog_add_task('Bug Fix', 'Fix what Tom messed up', 'Medium', 50, 'TODO')
 backlog_add_task('Bug Fix', 'Everything is on fire', 'Critical', 50, 'TODO')
 backlog_add_task('Bug Fix', 'System is Down', 'Critical', 40, 'TODO')
 backlog_add_task('Enhancement','Need new screen', 'High', 100, 'TODO' )
+backlog_add_task('Bug Fix', 'Report is incorrect', 'Medium', 50, 'TODO')
+backlog_add_task('Bug Fix', 'We are all going to die', 'Critical', 50, 'TODO')
+backlog_add_task('Bug Fix', 'System is Down Again', 'Critical', 40, 'TODO')
+backlog_add_task('Enhancement','Screen is taking too long', 'High', 100, 'TODO' )
+backlog_add_task('Enhancement','Need new report', 'High', 100, 'TODO' )
+backlog_add_task('Enhancement','Need updated calculations', 'High', 100, 'TODO' )
 
 assignment_xref = []
 
@@ -58,7 +64,7 @@ for item in backlog:
     for dev in developer_list:
         print(dev.name)
         if dev.assign_developer(item.estimate):
-            Assignment(item, dev)
+            assignment_xref.append(Assignment(item, dev))
             item.assigned = True
             break 
 
